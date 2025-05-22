@@ -49,5 +49,26 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Save Game"
 
+[node name="ResetButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Reset"
+
+[node name="ResetConfirmationDialog" type="ConfirmationDialog" parent="."]
+dialog_text = "Are you sure you want to reset? You will reseive X reset points!"
+
+[node name="ResetLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 857.0
+offset_right = 469.0
+offset_bottom = 955.0
+theme_override_colors/font_color = Color(0.919334, 0.143916, 0.596322, 1)
+text = "Current reset bonus: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/IncreaseButton" to="." method="_on_increase_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ResetButton" to="." method="_on_reseet_button_pressed"]
